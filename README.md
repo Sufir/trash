@@ -21,11 +21,11 @@
 Вывод случайной записи из файла, с импортом в БД:
 
     ``` bash
-    php app.php test:random dbuser dbpassword
+    $ php app.php test:random dbuser dbpassword
     ```
 	
 Информацию о параметрах можно посмотреть при помощи команды:
 	
 	``` bash
-    php app.php test:random -h
+    $ php app.php test:random -h
     ```
