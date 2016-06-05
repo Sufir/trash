@@ -20,12 +20,13 @@
 
 Вывод случайной записи из файла, с импортом в БД:
 
-    ``` bash
-    $ php app.php test:random dbuser dbpassword
-    ```
+``` bash
+$ php app.php test:random dbuser dbpassword
+```
 	
 Информацию о параметрах можно посмотреть при помощи команды:
 	
-	``` bash
-    $ php app.php test:random -h
-    ```
+``` bash
+$ php app.php test:random -h
+```
+	
