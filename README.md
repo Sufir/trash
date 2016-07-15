@@ -5,7 +5,7 @@
 1. Развернуть проект:
 
     ``` bash
-    $ git clone -b majesty https://github.com/Sufir/trash.git [project directory]
+    $ git clone -b test01 https://github.com/Sufir/trash.git [project directory]
     ```
 
 2. Установить зависимости:
@@ -28,6 +28,10 @@ $ php app.php -s=/full/path/to/source.html > test.txt
 $ php app.php -s=http://php.net/ > test.txt
 ```
 
+``` bash
+$ php app.php -s="https://yandex.ru/referats/?t=marketing+polit+chemistry" > test.txt
+```
+
 В дополнительном параметре `e` можно передать кодировку источника, если она отлична от UTF-8.
 
 ``` bash
@@ -43,5 +47,4 @@ $ php app.php -s=http://ru.lipsum.com/feed/html -e="koi8-r" > test.txt
     * пробовал несколько подходов разбиения регулярками, str_word_count, explode и их комбинациями
     * регулярку для поиска картинок и сылок взял как есть, по первой же ссылке из гугла
 * реп и readme ~20 мин.
-* кодировку, в принципе, можно дёргать из заголовков или meta, если указаны
-* разбиение по словам очень простое и много чего не учитывает
+* кодировку, в принципе, можно дополнительно дёргать из заголовков или meta
