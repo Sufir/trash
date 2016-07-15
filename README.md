@@ -38,7 +38,7 @@ $ php app.php -s="https://yandex.ru/referats/?t=marketing+polit+chemistry" > tes
 $ php app.php -s=http://ru.lipsum.com/feed/html -e="koi8-r" > test.txt
 ```
 
-## Использование
+## 
 
 * "скелет" приложения ~30-40 мин.
 * "гуглил", обращался к доке php и сторониим инструментам вроде regex101.com суммарно приблизительно около часа
