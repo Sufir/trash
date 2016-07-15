@@ -1,4 +1,4 @@
-# Majesty test
+# Test 01
 
 ## Установка
 
