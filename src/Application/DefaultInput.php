@@ -36,8 +36,8 @@ class DefaultInput implements InputInterface
     /**
      * {@inheritdoc}
      */
-    public function getArgument($name)
+    public function getArgument($name, $default = null)
     {
-        return (isset($this->arguments[$name])) ? $this->arguments[$name] : null;
+        return (isset($this->arguments[$name])) ? $this->arguments[$name] : $default;
     }
 }

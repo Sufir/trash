@@ -20,16 +20,17 @@ class SimpleParser implements ParserInterface
      */
     public function calcWords($html)
     {
-        $js = '/<script[^>]*?>.*?<\/script>/si';
-        $spaces = '/\s\s+/';
-
         $pattern = [
             '/<script[^>]*?>.*?<\/script>/si',
             '/\s\s+/',
+            '/</',
+            '/>/',
         ];
         $replacement = [
             '',
             ' ',
+            ' <',
+            '> ',
         ];
 
         $text = html_entity_decode(
@@ -38,7 +39,7 @@ class SimpleParser implements ParserInterface
             )
         );
 
-        preg_match_all('/([-+]?([0-9]*[,\.][0-9]+|[0-9]+))|(\w{2,})/iu', $text, $words);
+        preg_match_all('/([-+]?([0-9]*[,\.][0-9]+|[0-9]+))|(\w{2,}\-\w{2,})|(\w{2,})/iu', $text, $words);
 
         $counts = array_count_values($words[0]);
         arsort($counts);

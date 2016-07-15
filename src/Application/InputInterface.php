@@ -19,9 +19,10 @@ namespace Sufir\Application;
 interface InputInterface
 {
     /**
-     * 
+     *
      * @param string $name
+     * @param mixed $default
      * @return mixed
      */
-    public function getArgument($name);
+    public function getArgument($name, $default = null);
 }
