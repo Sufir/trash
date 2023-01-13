@@ -19,7 +19,9 @@ type LogExtended struct {
 }
 
 func NewLogExtended() *LogExtended {
-	return new(LogExtended)
+	logger := new(LogExtended)
+	logger.Logger = log.Default()
+	return logger
 }
 
 func (this *LogExtended) println(srcLogLvl LogLevel, prefix, msg string) {
