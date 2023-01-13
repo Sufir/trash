@@ -12,20 +12,8 @@ nbproject
 # windows thumbnail cache
 Thumbs.db
 
-# composer vendor dir
-/vendor
-
 # Mac DS_Store Files
 .DS_Store
-
-# phpunit itself is not needed
-phpunit.phar
-/phpunit.xml
-
-# Локальный конфиг (специфичный для окружения)
-/config/local.php
-/config/dic.php
-/www/.htaccess
 
 # Временные файлы
 *.tmp
