@@ -18,6 +18,10 @@ type LogExtended struct {
 	logLevel LogLevel // LogLevel это enum
 }
 
+func NewLogExtended() *LogExtended {
+	return new(LogExtended)
+}
+
 func (this *LogExtended) println(srcLogLvl LogLevel, prefix, msg string) {
 	// игнорируем сообщения, если уровень логгера меньше scrLogLvl
 	if this.logLevel < srcLogLvl {
