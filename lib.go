@@ -26,14 +26,16 @@ func NewLogExtended() *LogExtended {
 
 func (this *LogExtended) println(srcLogLvl LogLevel, prefix, msg string) {
 	// игнорируем сообщения, если уровень логгера меньше scrLogLvl
-	if this.logLevel < srcLogLvl {
+	if this.logLevel > srcLogLvl {
 		this.Logger.Println(prefix + " " + msg)
 	}
 }
 
 func (this *LogExtended) SetLogLevel(logLvl LogLevel) {
-	if (logLvl != LogLevelError && logLvl != LogLevelWarning && logLvl != LogLevelInfo) {
-		panic(fmt.Sprintf("Unknown log level: %d", logLvl))
+	switch logLvl {
+		case LogLevelError, LogLevelWarning, LogLevelInfo:
+		default:
+			panic(fmt.Sprintf("Unknown log level: %d", logLvl))
 	}
 
 	this.logLevel = logLvl
