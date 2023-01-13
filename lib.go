@@ -27,7 +27,7 @@ func NewLogExtended() *LogExtended {
 func (this *LogExtended) println(srcLogLvl LogLevel, prefix, msg string) {
 	// игнорируем сообщения, если уровень логгера меньше scrLogLvl
 	if this.logLevel <= srcLogLvl {
-		this.Logger.Println(prefix + " " + msg)
+		this.Logger.Println(prefix + " " + msg + "[ " + string(this.logLevel) + " <= " + string(srcLogLvl) + " ]")
 	}
 }
 
@@ -50,5 +50,5 @@ func (this *LogExtended) Warnln(msg string) {
 }
 
 func (this *LogExtended) Errorln(msg string) {
-	this.println(LogLevelWarning, "ERR:", msg)
+	this.println(LogLevelError, "ERR:", msg)
 }
