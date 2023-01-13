@@ -3,6 +3,7 @@ package extended
 import (
 	"fmt"
 	"log"
+	"strconv"
 )
 
 type LogLevel int
@@ -24,10 +25,10 @@ func NewLogExtended() *LogExtended {
 	return logger
 }
 
-func (this *LogExtended) println(srcLogLvl LogLevel, prefix, msg string) {
+func (this *LogExtended) println(srcLogLvl LogLevel, prefix string, msg string) {
 	// игнорируем сообщения, если уровень логгера меньше scrLogLvl
 	if this.logLevel <= srcLogLvl {
-		this.Logger.Println(prefix + " " + msg + "[ " + string(this.logLevel) + " <= " + string(srcLogLvl) + " ]")
+		this.Logger.Println(prefix + " " + msg + "[ " + strconv.Itoa(int(this.logLevel)) + " <= " + strconv.Itoa(int(srcLogLvl)) + " ]")
 	}
 }
 
